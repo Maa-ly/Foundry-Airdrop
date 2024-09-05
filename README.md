@@ -1,66 +1,27 @@
-## Foundry
+# Merkle Airdrop
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+This project consists of two main components:
+1. **BagelToken**: A custom ERC20 token with minting functionality.
+2. **MerkleAirdrop**: A contract to manage token distribution through a Merkle tree-based airdrop.
 
-Foundry consists of:
+## Overview
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- The **MerkleAirdrop** contract allows eligible users to claim a predetermined amount of BagelToken based on their inclusion in a Merkle tree.
+- The **BagelToken** is an ERC20 token that can be minted by the owner and distributed to users via the airdrop contract.
 
-## Documentation
+## Prerequisites
 
-https://book.getfoundry.sh/
+To work with this project, you will need the following:
+- [Node.js](https://nodejs.org/) and npm installed.
+- [Foundry](https://getfoundry.sh/) for compiling and deploying smart contracts.
+- [zkSync CLI](https://zksync.io/) for interacting with zkSync.
+- Install the following dependencies in your project:
+  ```bash
+  murky/=lib/murky/
+  @openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
+  foundry-devops/=lib/foundry-devops
+  forge-std/=lib/forge-std/src/
 
-## Usage
+git clone https://github.com/Maa-ly/Foundry-Airdrop.git
+cd Foundry-Airdrop
 
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
